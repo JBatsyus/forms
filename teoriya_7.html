@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Невалидная форма</title>
+    <style>
+        form {
+            border: 2px solid navy;
+            height: 300px;
+            width: 400px;
+            margin: 100px auto;
+            border-radius: 10px;
+            background-color: rgb(0, 119, 128);
+            padding: 40px;
+        }
+
+        input,
+        button {
+            height: 40px;
+            margin: 10px;
+            width: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgb(250, 208, 156);
+            font-family: monospace;
+            font-size: 20px;
+            outline: 0;
+        }
+
+        button {
+            background-color: rgb(226, 192, 43);
+        }
+
+        input:required:valid {
+            border: 5px solid rgb(231, 191, 9);
+
+        }
+
+        input:hover {
+            border: 2px solid red;
+        }
+
+        input:focus {
+            border: 3px solid green
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div> <input title="Логин может состоять из латинских букв и цифр" type="text" required
+                placeholder="Введите, пожалуйста, логин" pattern="^[a-zA-Z0-9]+$">*
+        </div>
+        <div> <input title="Ваш email должен содержать латинские буквы, цифры и @" type="email" id="logn"
+                placeholder="Введите, пожалуйста, email" required
+                pattern="^[A-Za-z0-9][A-Za-z0-9\.-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$">*
+        </div>
+        <div> <button type="submit"> Валидировать!</button></div>
+    </form>
+
+</body>
+
+</html>
