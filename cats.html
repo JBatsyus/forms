@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кото-Опросник</title>
+    <link rel="shortcut icon" href="https://image.flaticon.com/icons/png/128/4867/4867184.png" type="image/svg">
+    <style>
+        h1 {
+            margin-top: 15px;
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif color: black;
+
+        }
+
+        form {
+            border: 2px solid rgb(231, 209, 7);
+            height: 700px;
+            width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: rgba(240, 206, 206, 0.466);
+            font-size: 17px;
+            font-family: monospace;
+            font-size: 17px;
+        }
+
+        .style,
+        select,
+        button {
+            height: 30px;
+            margin: 3px;
+            width: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgb(243, 213, 176);
+            font-size: 20px;
+            outline: 0;
+        }
+
+        input:required:valid {
+            border: 2px solid rgb(231, 191, 9);
+            background-color: rgb(240, 218, 119);
+
+        }
+
+        textarea:required:valid {
+            border: 2px solid rgb(231, 191, 9);
+            background-color: rgb(240, 218, 119);
+
+        }
+
+        select:required:valid {
+            border: 2px solid rgb(231, 191, 9);
+            background-color: rgb(240, 218, 119);
+
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        textarea {
+            font-family: monospace;
+            font-size: 20px;
+            background-color: rgb(243, 213, 176);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Опросник для обладателей котиков =^-^= </h1>
+    <form name="input">
+        <div><label for="nickename">Введите кличку питомца:</label>
+            <input type="text" title="Может состоять из букв и цифр" pattern="[/^[A-Za-z -]+$/]" class="style"
+                placeholder="Пушок II" required>
+        </div>
+
+        <div><br>Укажите пол питомца:<br>
+            <label for="she">Самка</label>
+            <input type="radio" name="sex" id="she" value="she" required>
+            <label for="he">Самец</label>
+            <input type="radio" name="sex" id="he" value="he" required><br>
+        </div>
+
+        <div><br />Выберите породу питомца:
+            <select required>
+                <option value="option1">Дворовой</option>
+                <option value="option2" selected>Домашний</option>
+                <option value="option3">Сиамский</option>
+                <option value="option4">Бенгальский</option>
+                <option value="option5">Британская</option>
+                <option value="option6">Корниш рекс</option>
+                <option value="option7">Персидский</option>
+                <option value="option8">Мейн-кун</option>
+                <option value="option9">Сфинкс</option>
+                <option value="option10">Сибиррский</option>
+            </select>
+        </div>
+
+        <div><br>Выберите, чем питается Ваш питомец:<br>
+            <input type="checkbox" id="food1"><label for="food1">Натуральный корм</label><br>
+            <input type="checkbox" id="food2"><label for="food2">Сухой корм</label><br>
+            <input type="checkbox" id="food3"><label for="food3">Влажный корм</label>
+        </div>
+        <br>
+        <fieldset>
+            <legend>ФИО владельца:</legend>
+
+            <input type="text" title="Только буквы русского алфавита" pattern="^[А-Яа-я]+$" class="style"
+                placeholder="Фамилия" required>
+            <input type="text" title="Только буквы русского алфавита" pattern="^[А-Яа-я]+$" class="style"
+                placeholder="Имя" required>
+            <input type="text" title="Только буквы русского алфавита" pattern="^[А-Яа-я]+$" class="style"
+                placeholder="Отчество" required></div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Контакты владельца:</legend>
+            <label for="tel">Введите номер телефона владельца:</label>
+            <input type="number" title="Только цифры" required class="style"
+                pattern="^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$" placeholder="+75555555555">
+            <label for="address"><br>Введите адрес проживания владельца:</label><br>
+            <br>
+            <textarea rows="5" cols="50" pattern="^[?!,.а-яА-ЯёЁ0-9\s]+$"
+                placeholder="Страна, населенный пункт, улица, дом, кватрира" required></textarea>
+        </fieldset>
+
+        <div><label><br />Приложить фото питомца:</label>
+            <input type="file" />
+        </div>
+
+        <div> <button type="submit"> Отправить</button></div>
+    </form>
+
+</body>
+
+</html>
