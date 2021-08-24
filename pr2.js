@@ -36,6 +36,7 @@ function checkMessage() {
     let author = document.getElementById("author").value;
     let comment = document.getElementById("comment").value;
     let avatar = document.getElementById("avatar").value
+  
 
     // проверяем, есть ли имя пользователя и комментарий в локальном хранилище, если нет, то загружаем
     if (localStorage.getItem('name') == null) {
@@ -44,9 +45,10 @@ function checkMessage() {
     if (localStorage.getItem('comment') == null) {
         localStorage.setItem('comment', JSON.stringify(comment))
     }
-    if (localStorage('avatar') == null) {
+    if (localStorage.getItem('avatar') == null) {
         localStorage.setItem('avatar', avatar)
     }
+    
 
     sendMessage(author, comment);
 }
