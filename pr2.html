@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {
+            box-sizing: border-box
+        } */
+
+        .box {
+            width: 600px;
+            margin: 5% auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            border: 2px solid rgb(92, 92, 240);
+        }
+
+        form,
+        textarea {
+            width: 590px;
+            margin: 2% auto;
+            font-size: 17px;
+            font-family: monospace
+        }
+
+        #author {
+            width: 290px;
+            height: 35px;
+            margin: 1% auto;
+            font-size: 17px;
+            font-family: monospace
+        }
+
+        .butbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        hr {
+            color: rgb(182, 176, 176);
+        }
+
+        .author {
+            color: green;
+            font-weight: bold;
+            padding-right: 10px;
+        }
+
+        button {
+            background-image: linear-gradient(1deg, #c5a653 0%, #fce134 50%, #dec833 100%);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: 1px solid #e4b73d;
+            cursor: pointer;
+            width: 590px;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="/pr2.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <form onsubmit="return false;">
+            <p>Hi</p>
+            <hr>
+            <p>how are you?</p>
+            <hr>
+            <div class="chat"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <div>
+                <label for="author">Имя*
+                </label>
+            </div>
+            <div>
+                <input type="text" name="author" id="author" value="" class="inputs" placeholder="Ваше имя">
+            </div>
+            <div>
+                <label for="avatar">Аватарочка*
+                </label>
+            </div>
+            <div>
+                <input type="file" name="avatar" id="avatar" value="" class="avatar">
+            </div>
+
+            <p><textarea rows="5" cols="30" name="text" id="comment">&nbsp</textarea></p>
+            <p class="butbox"><button onclick="checkMessage()">Send </button>
+        </form>
+    </div>
+</body>
+
+</html>
