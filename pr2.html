@@ -26,6 +26,9 @@
             margin: 2% auto;
             font-size: 17px;
             font-family: monospace
+             
+            
+           
         }
 
         #author {
@@ -76,8 +79,7 @@
             <div class="chat"></div>
             <br>
             <br>
-            <br>
-            <br>
+            
             <hr>
             <div>
                 <label for="author">Имя*
@@ -86,17 +88,13 @@
             <div>
                 <input type="text" name="author" id="author" value="" class="inputs" placeholder="Ваше имя">
             </div>
-            <div>
-                <label for="avatar">Аватарочка*
-                </label>
-            </div>
-            <div>
-                <input type="file" name="avatar" id="avatar" value="" class="avatar">
-            </div>
-           <div>
-            <img id='myImage' src='' /> 
             
-           </div>
+            <div>
+               
+                <input type="file" onchange="newFoto()"><br>
+                <img src="" height="100" alt="Image...">
+
+            </div>
             <p><textarea rows="5" cols="30" name="text" id="comment">&nbsp</textarea></p>
             <p class="butbox"><button onclick="checkMessage()">Send </button>
         </form>

@@ -1,10 +1,25 @@
+
+function newFoto() {
+    let file    = document.querySelector('input[type=file]').files[0];
+    let newFoto = document.querySelector('img');
+    
+    let reader  = new FileReader();
+  
+    reader.onloadend = function () {
+        newFoto.src = reader.result;
+    }
+  
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+        newFoto.src = "";
+    }
+  }
+
+
 // проверить, есть ли в локал  сторадже имя, и если оно не равно null, то мы должны его показать
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    let avatar = localStorage.getItem('avatar');
-    if (avatar != null) {
-        document.getElementById("avatar").value = avatar;
-    }
 
     let name = localStorage.getItem('name');
     if (name != null) {
@@ -19,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // добавление в див комментария
 
-function sendMessage( author, comment) {
+function sendMessage(author, comment) {
     let userCommet = document.getElementById("comment");
     let otvet = document.querySelector(".chat");
     if (userCommet.value) {
@@ -35,8 +50,8 @@ function sendMessage( author, comment) {
 function checkMessage() {
     let author = document.getElementById("author").value;
     let comment = document.getElementById("comment").value;
-    let avatar = document.getElementById("avatar").value
-  
+
+
 
     // проверяем, есть ли имя пользователя и комментарий в локальном хранилище, если нет, то загружаем
     if (localStorage.getItem('name') == null) {
@@ -45,10 +60,6 @@ function checkMessage() {
     if (localStorage.getItem('comment') == null) {
         localStorage.setItem('comment', JSON.stringify(comment))
     }
-    if (localStorage.getItem('avatar') == null) {
-        localStorage.setItem('avatar', avatar)
-    }
-    
-
-    sendMessage(author, comment);
+ sendMessage(author, comment);
 }
+
