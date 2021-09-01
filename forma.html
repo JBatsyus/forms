@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma</title>
+    <script src="/forma.js"></script>
+    <style>
+        body {
+            background-color: #ddd4d463;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        .box {
+            max-width: 400px;
+            margin: 10px auto;
+            background-color: #e7d3e4ad;
+            border-radius: 10px;
+            box-shadow: 3px 2px #574b4a;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        h1,
+        .title {
+            text-align: center;
+        }
+
+        /* Стилизация полей */
+        input {
+            border-radius: 10px;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #fcfcfca6;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 15px;
+        }
+
+        /* Стили кнопок */
+        button {
+            background-color: #c08dad;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            /* активный курсор */
+            cursor: pointer;
+            /* width: 100%; */
+            opacity: 0.9;
+            border-radius: 10px;
+        }
+
+
+        .cancelbtn {
+            padding: 14px 20px;
+            background-color: #574b4a;
+        }
+
+        /* Кнопки */
+        .cancelbtn,
+        .signupbtn {
+            width: 47%;
+        }
+
+        .buttbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        #errorsInfo {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form name="form" onsubmit="return false;">
+            <div class="container">
+                <h1>Регистрация</h1>
+                <p class="title">Заполните, пожалуйста, данную форму для создания аккаунта</p>
+                <hr>
+
+                <input type="text" placeholder="Ваше имя" id="fullname" required>
+
+                <input type="text" title="Ваш email должен содержать латинские буквы, цифры и @" placeholder="Email"
+                    id="emailbox"
+                    pattern="^[A-Za-z0-9][A-Za-z0-9\.-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$"
+                    required>
+
+                <input type="text" title="Логин может состоять из латинских букв и цифр" placeholder="Логин"
+                    id="logname" pattern="^[a-zA-Z0-9]+$" required>
+
+                <input type="password" placeholder="Пароль" id="pswd" required>
+
+                <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
+
+                <label>
+                    <input type="checkbox" checked="checked" style="margin-bottom:15px"> Запомнить меня
+                </label>
+
+                <div id="errorsInfo"></div>
+
+                <div class="buttbox">
+                    <button type="submit" onclick="check()" class="signupbtn">Зарегистрировать</button>
+                </div>
+
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>
